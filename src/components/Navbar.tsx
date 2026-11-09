@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Navbar({ currentPath }: { currentPath: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const repoUrl = "https://github.com/insaneodyssey26/hyprland";
+  const repoUrl = "https://github.com/insaneodyssey26/dotfiles";
 
   useEffect(() => {
     if (isOpen) {
@@ -35,7 +35,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
       {currentPath !== '/configs' && <div className="top-fade"></div>}
       <nav className={`floating-nav ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-content">
-          <h1>Hyprland Setup</h1>
+          <h1>Arch &amp; Niri</h1>
           
           <div className="desktop-links">
             {currentPath === '/configs' ? (

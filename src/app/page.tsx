@@ -8,7 +8,7 @@ import CustomScrollbar from '../components/CustomScrollbar';
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const repoUrl = "https://github.com/insaneodyssey26/hyprland";
+  const repoUrl = "https://github.com/insaneodyssey26/dotfiles";
 
   return (
     <main>
@@ -16,36 +16,39 @@ export default function Home() {
       <Navbar currentPath="/" />
 
       <section className="hero">
-        <h2 className="fade-up">Minimal. Fast.<br />Wayland Native.</h2>
+        <h2 className="fade-up">Minimal. Fast.<br />Scrollable Tiling.</h2>
         <p className="fade-up delay-1">
-          A finely tuned Arch Linux desktop environment built entirely for efficiency. Dynamic theming, GPU-accelerated terminals, and zero bloat.
+          A personal Arch Linux desktop setup built for efficiency with Niri. Dynamic wallpaper colors, GPU terminals, and an infinite horizontal ribbon.
         </p>
         <div className="image-wrapper fade-up delay-2" onClick={() => setSelectedImage("/assets/desktop.png")}>
           <img src="/assets/desktop.png" alt="Desktop Screenshot" />
         </div>
+        <p className="fade-up delay-2" style={{ fontSize: '0.85rem', opacity: 0.6, marginTop: '12px' }}>
+          * Note: Screenshots here are from earlier desktop sessions and might slightly differ from the live Niri setup you install, though the overall look, bar, and theme styling remain the same.
+        </p>
       </section>
 
       <section className="section-wide">
         <h3 className="fade-up">Overview</h3>
         <p className="fade-up">
-          A minimal, keyboard-centric environment built for daily use. Configurations are synchronized across components for a unified experience.
+          A clean, keyboard-focused setup for daily work. Everything is synced to wallpaper colors and stays out of your way.
         </p>
         <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
           <div className="card fade-up">
             <h4>Dynamic Theming</h4>
-            <p>Colors are automatically generated from your active wallpaper using Matugen. The entire system adapts instantly.</p>
+            <p>Colors are automatically generated from your active wallpaper using Matugen. The whole system updates instantly.</p>
           </div>
           <div className="card fade-up delay-1">
             <h4>Terminal Environment</h4>
-            <p>Customized Zsh configuration featuring fzf-based fuzzy finding, zoxide directory navigation, and syntax highlighting.</p>
+            <p>Fast Zsh & Fish setup with fzf fuzzy finding, zoxide directory jumping, and syntax highlighting.</p>
           </div>
           <div className="card fade-up delay-2">
-            <h4>Scrolling Layout System</h4>
-            <p>Seamlessly toggle between standard tiling and an infinite paper-scroll window layout directly from the Fuzzel control center.</p>
+            <h4>Scrollable Ribbon</h4>
+            <p>Infinite horizontal workspace flow powered natively by Niri. Windows never get cramped or squished.</p>
           </div>
           <div className="card fade-up delay-3">
             <h4>Window Management</h4>
-            <p>Keyboard-focused workflow using carefully optimized Hyprland bindings for extreme efficiency and workspace management.</p>
+            <p>Simple column navigation, smooth desktop overview on Alt+Tab, and zero lag.</p>
           </div>
         </div>
       </section>
@@ -59,34 +62,34 @@ export default function Home() {
       </section>
 
       <section className="fade-up">
-        <h3>Hardware Constraints & Fixes</h3>
-        <p>Because this setup is optimized for my specific workflow, there are a few hardware-specific lines of code that you will need to change for your own machine. Here is how to fix them:</p>
+        <h3>Hardware Tips & Tweaks</h3>
+        <p>Since these dotfiles are customized for my laptop, here are a few things you might want to adjust for yours:</p>
         
         <div className="alert">
           <h4>1. Dual-Boot Hard Drive Paths</h4>
-          <p>My file search scripts scan specific Windows partition mounts. If you don't have these, they will fail to find anything.</p>
-          <p><strong>Fix:</strong> Open <a href={`${repoUrl}/blob/main/hypr/scripts/project_launcher.sh`} target="_blank">project_launcher.sh</a> and <a href={`${repoUrl}/blob/main/hypr/scripts/file_search.sh`} target="_blank">file_search.sh</a> and change the directory arrays to point to your actual folders.</p>
+          <p>My file search scripts check specific partition mount paths. If you do not have those, update them to your own folders.</p>
+          <p><strong>Fix:</strong> Open <a href={`${repoUrl}/blob/main/scripts/project_launcher.sh`} target="_blank">project_launcher.sh</a> and <a href={`${repoUrl}/blob/main/scripts/file_search.sh`} target="_blank">file_search.sh</a> to set your paths.</p>
         </div>
 
         <div className="alert">
           <h4>2. Waybar Hardware Sensors</h4>
-          <p>My Waybar configuration expects a direct PCI hardware path for CPU temperatures and an Asus ROG app for the battery.</p>
-          <p><strong>Fix:</strong> Open <a href={`${repoUrl}/blob/main/waybar/config.jsonc`} target="_blank">config.jsonc</a>. Under the temperature module, delete the `hwmon-path-abs` line. Under battery, change `BAT1` to `BAT0`.</p>
+          <p>My Waybar setup uses direct sensor paths for CPU temps and battery status.</p>
+          <p><strong>Fix:</strong> Open <a href={`${repoUrl}/blob/main/waybar/config.jsonc`} target="_blank">config.jsonc</a>. In the temperature module, remove <code>hwmon-path-abs</code> for auto-detection. Check if your battery is <code>BAT0</code> or <code>BAT1</code>.</p>
         </div>
 
         <div className="alert">
           <h4>3. Monitor Configuration</h4>
-          <p>My configuration explicitly hardcodes my laptop screen (`eDP-1`) to run at 144Hz.</p>
-          <p><strong>Fix:</strong> Open <a href={`${repoUrl}/blob/main/hypr/configs/monitors.lua`} target="_blank">monitors.lua</a> and change `eDP-1` to your monitor's name, or use `,preferred,auto,auto` to make it universal.</p>
+          <p>My configuration sets my internal display (<code>eDP-1</code>) to 144Hz.</p>
+          <p><strong>Fix:</strong> Open <a href={`${repoUrl}/blob/main/niri/config.kdl`} target="_blank">config.kdl</a> and adjust the <code>output &quot;eDP-1&quot;</code> block for your display.</p>
         </div>
       </section>
 
       <section className="fade-up">
         <h3>Installation</h3>
-        <p>Run the automated setup script on a fresh Arch Linux installation. It will safely symlink all configurations to your <code>~/.config/</code> folder.</p>
+        <p>Run the setup script on a fresh Arch Linux installation. It will symlink configurations directly to your <code>~/.config/</code> folder.</p>
         <pre>
-{`git clone https://github.com/insaneodyssey26/hyprland.git ~/hyprland
-cd ~/hyprland
+{`git clone https://github.com/insaneodyssey26/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./setup.sh`}
         </pre>
       </section>

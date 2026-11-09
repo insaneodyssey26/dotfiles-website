@@ -13,43 +13,41 @@ interface ConfigItem {
 }
 
 const CONFIGS: ConfigItem[] = [
-  { id: 'hypr-main', name: 'Hyprland (Main)', category: 'Desktop', repoPath: 'hypr/hyprland.lua', installPath: '~/.config/hypr/hyprland.lua', description: 'The core configuration for the Hyprland compositor written in Lua.' },
-  { id: 'hypr-binds', name: 'Hyprland Keybinds', category: 'Desktop', repoPath: 'hypr/configs/binds.lua', installPath: '~/.config/hypr/configs/binds.lua', description: 'All keyboard shortcuts for window management and app launching.' },
-  { id: 'hypr-autostart', name: 'Hyprland Autostart', category: 'Desktop', repoPath: 'hypr/configs/autostart.lua', installPath: '~/.config/hypr/configs/autostart.lua', description: 'Executes daemons and background tasks when Hyprland launches.' },
-  { id: 'hypr-monitors', name: 'Hyprland Monitors', category: 'Desktop', repoPath: 'hypr/configs/monitors.lua', installPath: '~/.config/hypr/configs/monitors.lua', description: 'Display resolution, refresh rate, and scaling configurations.' },
-  { id: 'hypr-settings', name: 'Hyprland Settings', category: 'Desktop', repoPath: 'hypr/configs/settings.lua', installPath: '~/.config/hypr/configs/settings.lua', description: 'General settings, animations, and window decoration rules.' },
-  { id: 'hypr-lock', name: 'Hyprlock', category: 'Desktop', repoPath: 'hypr/hyprlock.conf', installPath: '~/.config/hypr/hyprlock.conf', description: 'The premium glassmorphic lockscreen configuration.' },
-  { id: 'hypr-idle', name: 'Hypridle', category: 'Desktop', repoPath: 'hypr/hypridle.conf', installPath: '~/.config/hypr/hypridle.conf', description: 'Idle management daemon (turns off screen, locks session, suspends).' },
-  { id: 'waybar', name: 'Waybar (Config)', category: 'UI Suite', repoPath: 'waybar/config.jsonc', installPath: '~/.config/waybar/config.jsonc', description: 'The top status bar containing workspaces, clock, battery, and system tray.' },
-  { id: 'waybar-css', name: 'Waybar (Style)', category: 'UI Suite', repoPath: 'waybar/style.css', installPath: '~/.config/waybar/style.css', description: 'The CSS styling for the Waybar.' },
-  { id: 'fuzzel', name: 'Fuzzel (Launcher)', category: 'UI Suite', repoPath: 'fuzzel/fuzzel.ini', installPath: '~/.config/fuzzel/fuzzel.ini', description: 'The minimalist application launcher triggered by SUPER + D.' },
-  { id: 'swaync', name: 'SwayNC (Notifications)', category: 'UI Suite', repoPath: 'swaync/config.json', installPath: '~/.config/swaync/config.json', description: 'The notification center configuration.' },
-  { id: 'swaync-css', name: 'SwayNC (Style)', category: 'UI Suite', repoPath: 'swaync/style.css', installPath: '~/.config/swaync/style.css', description: 'The CSS styling for the notification center.' },
-  { id: 'zsh', name: 'Zsh Shell', category: 'Terminal', repoPath: '.zshrc', installPath: '~/.zshrc', description: 'The highly optimized Zsh configuration featuring fzf and zoxide.' },
-  { id: 'fish', name: 'Fish Shell', category: 'Terminal', repoPath: 'fish/config.fish', installPath: '~/.config/fish/config.fish', description: 'The Fish shell equivalent of the Zsh configuration.' },
-  { id: 'kitty', name: 'Kitty Terminal', category: 'Terminal', repoPath: 'kitty/kitty.conf', installPath: '~/.config/kitty/kitty.conf', description: 'The GPU-accelerated terminal emulator configuration.' },
-  { id: 'foot', name: 'Foot Terminal', category: 'Terminal', repoPath: 'foot/foot.ini', installPath: '~/.config/foot/foot.ini', description: 'A lightweight Wayland-native terminal emulator.' },
-  { id: 'fastfetch', name: 'Fastfetch', category: 'Terminal', repoPath: 'fastfetch/config.jsonc', installPath: '~/.config/fastfetch/config.jsonc', description: 'The system information fetch utility shown on terminal startup.' },
-  { id: 'cava', name: 'Cava (Audio Visualizer)', category: 'Terminal', repoPath: 'cava/config', installPath: '~/.config/cava/config', description: 'Terminal-based audio visualizer configuration.' },
-  { id: 'setup', name: 'Automated Installer', category: 'System', repoPath: 'setup.sh', installPath: '~/hyprland/setup.sh', description: 'The automated script to safely symlink all these configs to your system.' }
+  { id: 'niri-config', name: 'Niri (Main Config)', category: 'Desktop', repoPath: 'niri/config.kdl', installPath: '~/.config/niri/config.kdl', description: 'Core compositor settings, outputs, gaps, shadows, and idle daemon.' },
+  { id: 'niri-binds', name: 'Niri Keybinds', category: 'Desktop', repoPath: 'niri/binds.kdl', installPath: '~/.config/niri/binds.kdl', description: 'All keyboard shortcuts for window movements, column resizing, and app launching.' },
+  { id: 'niri-rules', name: 'Niri Window Rules', category: 'Desktop', repoPath: 'niri/rules.kdl', installPath: '~/.config/niri/rules.kdl', description: 'Floating rules, size constraints, and application workspace behaviors.' },
+  { id: 'hypr-lock', name: 'Hyprlock', category: 'Desktop', repoPath: 'hyprlock/hyprlock.conf', installPath: '~/.config/hyprlock/hyprlock.conf', description: 'Custom frosted glass lockscreen with clock, avatar, and battery info.' },
+  { id: 'waybar', name: 'Waybar (Config)', category: 'UI Suite', repoPath: 'waybar/config.jsonc', installPath: '~/.config/waybar/config.jsonc', description: 'The top status bar with workspaces, clock, audio, battery, and tray.' },
+  { id: 'waybar-css', name: 'Waybar (Style)', category: 'UI Suite', repoPath: 'waybar/style.css', installPath: '~/.config/waybar/style.css', description: 'CSS styling for Waybar components and dynamic Matugen colors.' },
+  { id: 'fuzzel', name: 'Fuzzel (Launcher)', category: 'UI Suite', repoPath: 'fuzzel/fuzzel.ini', installPath: '~/.config/fuzzel/fuzzel.ini', description: 'Minimalist application launcher triggered by SUPER + D.' },
+  { id: 'swaync', name: 'SwayNC (Notifications)', category: 'UI Suite', repoPath: 'swaync/config.json', installPath: '~/.config/swaync/config.json', description: 'The notification center and widget panel configuration.' },
+  { id: 'swaync-css', name: 'SwayNC (Style)', category: 'UI Suite', repoPath: 'swaync/style.css', installPath: '~/.config/swaync/style.css', description: 'CSS styling for notification popups and control center.' },
+  { id: 'zsh', name: 'Zsh Shell', category: 'Terminal', repoPath: '.zshrc', installPath: '~/.zshrc', description: 'Optimized Zsh configuration featuring fzf and zoxide.' },
+  { id: 'fish', name: 'Fish Shell', category: 'Terminal', repoPath: 'fish/config.fish', installPath: '~/.config/fish/config.fish', description: 'Fish shell configuration with auto-suggestions and synced aliases.' },
+  { id: 'kitty', name: 'Kitty Terminal', category: 'Terminal', repoPath: 'kitty/kitty.conf', installPath: '~/.config/kitty/kitty.conf', description: 'GPU-accelerated terminal configuration.' },
+  { id: 'foot', name: 'Foot Terminal', category: 'Terminal', repoPath: 'foot/foot.ini', installPath: '~/.config/foot/foot.ini', description: 'Fast, lightweight Wayland terminal emulator.' },
+  { id: 'fastfetch', name: 'Fastfetch', category: 'Terminal', repoPath: 'fastfetch/config.jsonc', installPath: '~/.config/fastfetch/config.jsonc', description: 'System information display shown on new terminal sessions.' },
+  { id: 'cava', name: 'Cava (Visualizer)', category: 'Terminal', repoPath: 'cava/config', installPath: '~/.config/cava/config', description: 'Terminal audio spectrum visualizer configuration.' },
+  { id: 'screenshot', name: 'Screenshot Tool', category: 'System', repoPath: 'scripts/screenshot.sh', installPath: '~/dotfiles/scripts/screenshot.sh', description: 'Grim + Slurp capture with clipboard copy and Satty annotation.' },
+  { id: 'setup', name: 'Setup Script', category: 'System', repoPath: 'setup.sh', installPath: '~/dotfiles/setup.sh', description: 'Automated script to symlink dotfiles into ~/.config/.' }
 ];
 
 export default function ConfigsPage() {
-  const [activeId, setActiveId] = useState<string>("hypr-main");
+  const [activeId, setActiveId] = useState<string>("niri-config");
   const [fileContent, setFileContent] = useState<string>("Loading configuration...");
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   const activeConfig = CONFIGS.find(c => c.id === activeId) || CONFIGS[0];
-  const repoUrl = "https://github.com/insaneodyssey26/hyprland";
+  const repoUrl = "https://github.com/insaneodyssey26/dotfiles";
 
   useEffect(() => {
     setLoading(true);
     setFileContent("Fetching file from GitHub...");
     setCopied(false);
     
-    fetch(`https://raw.githubusercontent.com/insaneodyssey26/hyprland/main/${activeConfig.repoPath}`)
+    fetch(`https://raw.githubusercontent.com/insaneodyssey26/dotfiles/main/${activeConfig.repoPath}`)
       .then(res => {
         if (!res.ok) throw new Error("Not found");
         return res.text();
@@ -71,7 +69,7 @@ export default function ConfigsPage() {
   };
 
   const dirPath = activeConfig.installPath.substring(0, activeConfig.installPath.lastIndexOf('/'));
-  const installCommand = `mkdir -p ${dirPath} && curl -sL https://raw.githubusercontent.com/insaneodyssey26/hyprland/main/${activeConfig.repoPath} > ${activeConfig.installPath}`;
+  const installCommand = `mkdir -p ${dirPath} && curl -sL https://raw.githubusercontent.com/insaneodyssey26/dotfiles/main/${activeConfig.repoPath} > ${activeConfig.installPath}`;
 
   return (
     <main style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>

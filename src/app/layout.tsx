@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hyprland Setup by Masum",
-  description: "A finely tuned Arch Linux Hyprland desktop environment built for efficiency, GPU-accelerated terminals, and dynamic theming.",
+  title: "Arch & Niri Setup by Masum",
+  description: "A finely tuned Arch Linux desktop environment powered by Niri scrollable tiling, GPU-accelerated terminals, and dynamic theming.",
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",

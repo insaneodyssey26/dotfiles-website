@@ -1,41 +1,40 @@
-# Hyprland Web Showcase
+# Dotfiles Showcase Website
 
-The official web showcase and interactive configuration explorer for my **[hyprland](https://github.com/insaneodyssey26/hyprland)** Arch Linux dotfiles repository.
+The website and interactive configuration viewer for my **[dotfiles](https://github.com/insaneodyssey26/dotfiles)** repository (running Arch Linux with Niri).
 
 ---
 
-## Key Features
+## What It Does
 
-* **Dynamic GitHub Sync**: Live-fetches raw configuration files (`.lua`, `.conf`, `.jsonc`, `.css`) directly from the dotfiles main branch with zero manual maintenance.
-* **Animated Wave Scroll Progress**: Custom Awwwards-style scroll tracker built with React math that dynamically expands and glows horizontal indicators based on scroll depth.
-* **Curated Config Explorer**: Filterable IDE-like interface with syntax-highlighted code viewing, installation paths, and auto-generated terminal commands.
-* **Interactive Screenshot Lightbox**: Tap-to-expand preview modal for desktop screenshots with glassmorphic backdrop filters.
-* **Floating Glassmorphic Navbar**: Modern pill navigation with smooth scroll-shrink animations, mobile drawer, and personal portfolio integration.
+- **Live GitHub Sync**: Directly pulls raw configuration files (`.kdl`, `.conf`, `.jsonc`, `.css`, scripts) from the `main` branch of the dotfiles repo so everything stays up to date without manual edits.
+- **Scroll Progress & Minimal UI**: Smooth pill navigation, dynamic scroll progress indicators, and clean glassmorphic styling.
+- **Config Explorer**: Interactive viewer with category filters, installation paths, and quick commands.
+- **Image Lightbox**: Click to view the desktop preview full-size.
 
 ---
 
 ## Tech Stack
 
-* **Framework**: Next.js (App Router)
-* **Styling**: Vanilla CSS (Custom Design System & Glassmorphism)
-* **Typography**: Geist Sans & Geist Mono
-* **Deployment**: Vercel
+- **Framework**: Next.js (App Router)
+- **Styling**: Vanilla CSS (custom tokens & glassmorphism)
+- **Fonts**: Geist Sans & Geist Mono
+- **Deployment**: Vercel
 
 ---
 
-## Local Setup
+## Local Development
 
 ```bash
-git clone https://github.com/insaneodyssey26/hyprland-website.git
-cd hyprland-website
+git clone https://github.com/insaneodyssey26/dotfiles-website.git
+cd dotfiles-website
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view locally.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ---
 
 ## Related Repositories
 
-* **[insaneodyssey26/hyprland](https://github.com/insaneodyssey26/hyprland)** — Core Arch Linux desktop environment configurations, theme pipelines, and scripts.
+- **[insaneodyssey26/dotfiles](https://github.com/insaneodyssey26/dotfiles)** — My personal Arch Linux dotfiles (Niri scrollable tiling, Waybar, Matugen, Kitty, Hyprlock, and scripts).
